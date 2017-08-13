@@ -1,0 +1,28 @@
+import java.util.Arrays;
+
+class Test{
+	public static void main(String[] args) {
+		int a[]={10, 5, 6, 3, 2, 20, 100, 80};
+		waveForm(a);
+	}
+
+	 static void waveForm(int[] a) {
+	 for(int i=0;i<a.length-2;i=i+2){
+		 if(a[i]<a[i+1]){
+			 int temp=a[i];
+			 a[i]=a[i+1];
+			 a[i+1]=temp;
+			 
+		 }
+		 if(a[i+1]>a[i+2]){
+			 int temp=a[i+1];
+			 a[i+1]=a[i+2];
+			 a[i+2]=temp;
+		 }
+			
+	 }
+	 System.out.println(Arrays.toString(a));
+	}
+	
+
+}
