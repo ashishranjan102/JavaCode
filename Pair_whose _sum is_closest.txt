@@ -1,0 +1,34 @@
+class Test{
+	public static void main(String[] args) {
+		int a[]={1,4,5,7};
+		int b[]={10,20,30,40};
+		int x=38;
+		printClosest(a,b,x);
+	}
+	private static void printClosest(int[] a,int[]b,int diff) {
+		int closest=Integer.MAX_VALUE;
+		int x=0,y=b.length-1;
+		@SuppressWarnings("unused")
+		int p1 = 0,p2 = 0;
+		while(x<a.length&&y>=0){
+			System.out.println("d"+diff);
+			if(Math.abs(a[x]+a[y]-diff)<closest){
+				p1=x;
+				p2=y;
+				closest=Math.abs(a[x]+a[y]-diff);
+			}
+
+			if((a[x]+b[y])>diff){
+
+				y--;
+			}
+
+			else{
+				x++;
+			}
+		}
+		System.out.println("Closest are"+a[p1]+" "+b[p2]);
+	}
+
+}
+
