@@ -1,0 +1,32 @@
+class Test{
+	public static void main(String[] args) {
+		int a[]={12,13,1,10,34,1};
+		smallestSecondSmallest(a);
+	}
+	private static void smallestSecondSmallest(int[] a) {
+	int smallest;
+	int secondSmall;
+	
+	if(a[0]>a[1]){
+		smallest=a[1];
+		secondSmall=a[0];
+	}
+	else{
+		smallest=a[0];
+		secondSmall=a[1];
+	}
+	for(int i=2;i<a.length;i++){
+		if(a[i]<smallest){
+			secondSmall=smallest;
+			smallest=a[i];}
+			if(a[i]<secondSmall&&a[i]>smallest){
+				
+				secondSmall=a[i];
+			}
+		}
+	
+	System.out.println("Smallest "+smallest+ " "+"secondSmall "+secondSmall);
+	}
+
+}
+
