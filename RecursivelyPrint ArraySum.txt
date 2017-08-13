@@ -1,0 +1,17 @@
+class Test{
+	public static void main(String[] args) {
+		int a[]={1, 5, 3, 4, 2};
+		int x=0;
+		int sum=recurcivelySum(a,x);
+		System.out.println("sum "+sum);
+	}
+	private static int recurcivelySum(int[] a,int x) {
+		if(x==a.length-1){
+			return a[x];
+		}
+		return a[x]+recurcivelySum(a,++x);
+
+	}
+
+}
+
