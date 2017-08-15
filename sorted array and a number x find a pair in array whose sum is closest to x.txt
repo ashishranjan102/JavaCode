@@ -1,0 +1,34 @@
+
+class Test{
+	public static void main(String[] args) {
+		int a[]={10,22,28,29,30,40};
+		int sum=54;
+		closest(a,sum);	
+	}
+
+	static void closest(int[] a, int sum) {
+	int d=0,c=Integer.MAX_VALUE,p1=0,p2=0;
+		for(int i=a.length-1;i>=0;i--){
+			int x=0;
+			int y=i;
+			while(x<a.length&&y>=0){
+				 d= (a[x]+a[y]);
+				 if(Math.abs(sum-d)<c){
+					 c=Math.abs(sum-d);
+					 p1=a[x];p2=a[y];
+					 
+				 }
+				 if(d<sum){
+					 x++;
+				 }
+				 else{
+					 y--;
+				 }
+			}
+			
+		}
+		System.out.println(p1 + " "+p2);
+	}
+
+	
+}
